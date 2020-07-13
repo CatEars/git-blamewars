@@ -1,2 +1,2 @@
-from . import blamewars
+from .blamewars import *
 
