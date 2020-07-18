@@ -6,8 +6,8 @@ authors = ["Your Name <you@example.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
-pygit2 = "^1.2.1"
 jinja2 = "^2.11.2"
+gitpython = "^3.1.7"
 
 [tool.poetry.dev-dependencies]
 doit = "^0.32.0"

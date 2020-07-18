@@ -1,8 +1,5 @@
 from typing import List, Tuple
 import collections
-import os
-import subprocess
-import pygit2
 
 class GitStats:
 
@@ -25,24 +22,8 @@ class GitStats:
         return [(author, casualty_count) for casualty_count, author in victims]
 
 
-def list_all_unignored_files(root_path: str) -> List[str]:
-    curr_cwd = os.getcwd()
-    os.chdir(root_path)
-    result = subprocess.check_output('git ls-files', shell=True, encoding='utf8')
-    os.chdir(curr_cwd)
-    return result.splitlines()
-
-
 def blame_stats_from_repo(root_path: str) -> GitStats:
-    files = list_all_unignored_files(root_path)
     stats = GitStats()
-    repo = pygit2.Repository(root_path)
-    for relative_fpath in files:
-        blames = repo.blame(relative_fpath)
-        for blame in blames:
-            stats.lines_killed_by(blame.final_committer.name,
-                                  blame.lines_in_hunk,
-                                  blame.orig_committer.name)
     return stats
 
 if __name__ == '__main__':
