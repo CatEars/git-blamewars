@@ -1,5 +1,8 @@
 from typing import List, Tuple
 import collections
+import os
+import subprocess
+
 
 class GitStats:
 
@@ -22,5 +25,17 @@ class GitStats:
         return [(author, casualty_count) for casualty_count, author in victims]
 
 
+def list_all_files_from_root(root_path: str) -> List[str]:
+    curr_cwd = os.getcwd()
+    os.chdir(root_path)
+    result = subprocess.check_output('git ls-files', shell=True, encoding='utf8').splitlines()
+    os.chdir(curr_cwd)
+    return result
+
+
 def generate_stats():
     return None
+
+
+if __name__ == '__main__':
+    print(list_all_files_from_root('.'))
