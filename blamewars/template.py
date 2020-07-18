@@ -17,7 +17,7 @@ def generate_template(stats: GitStats) -> str:
 
 if __name__ == '__main__':
     stats = GitStats()
-    stats.lines_killed_by('Schwounkeponk', 1337, 'Henkebenk')
+    stats.lines_killed_by('Schwounkeponken', 1337, 'Henkebenk')
     stats.lines_killed_by('Henkebenk', 10, 'villiamboi')
     stats.lines_killed_by('Mr. Torvalds', 100000000000, '*')
     print(generate_template(stats))
