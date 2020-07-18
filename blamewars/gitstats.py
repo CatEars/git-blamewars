@@ -18,7 +18,7 @@ class GitStats:
 
     def top_victims(self, N: int) -> List[Tuple[str, int]]:
         victims = [(self.casualty_count[author], author) for author in self.casualty_count]
-        victims = sorted(victims)[:N]
+        victims = sorted(victims, reverse=True)[:N]
         return [(author, casualty_count) for casualty_count, author in victims]
 
 

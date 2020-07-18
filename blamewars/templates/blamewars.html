@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>Biggest killers</h1>
+        <ul>
+            {% for author, kill_count in killers %}
+            <li>{{ author }} has removed {{ kill_count }} lines</li>
+            {% endfor %}
+        </ul>
+        <h1>Biggest losers</h1>
+        <ul>
+            {% for author, lose_count in victims %}
+            <li>{{ author }} has lost {{ lose_count }} lines</li>
+            {% endfor %}
+        </ul>
+    </body>
+</html>
