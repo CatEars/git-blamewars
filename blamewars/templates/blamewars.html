@@ -1,17 +1,63 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+         <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+        
+        <!--Import Google Icon Font-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+        <style type="text/css">
+            #display-area > :last-child,
+            #display-area > :target {
+                display: block;
+            }
+
+            #display-area > div:target ~ div:last-child,
+            #display-area > div {
+                display: none;
+            }
+        </style>
+    </head>
     <body>
-        <h1>Biggest killers</h1>
-        <ul>
-            {% for author, kill_count in killers %}
-            <li>{{ author }} has removed {{ kill_count }} lines</li>
-            {% endfor %}
-        </ul>
-        <h1>Biggest losers</h1>
-        <ul>
-            {% for author, lose_count in victims %}
-            <li>{{ author }} has lost {{ lose_count }} lines</li>
-            {% endfor %}
-        </ul>
+        <nav class="black">
+            <div class="nav-extended">
+                <div class="nav-content">
+                    <ul id="tabs tabs-transparent">
+                        <li class="tab"><a href="#about">About</a></li>
+                        <li class="tab"><a href="#killers">Top Killers</a></li>
+                        <li class="tab"><a href="#losers">Top Losers</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <section id="display-area" class="container">
+            <div id="killers" class="col s12">
+                <h1>Top Killers</h1>
+                <ul>
+                {% for author, kill_count in killers %}
+                    <li>{{ author }} has removed {{ kill_count }} lines</li>
+                {% endfor %}
+                </ul>
+            </div>
+            <div id="losers" class="col s12">
+                <h1>Top Losers</h1>
+                <ul>
+                {% for author, lose_count in victims %}
+                    <li>{{ author }} has lost {{ lose_count }} lines</li>
+                {% endfor %}
+                </ul>
+            </div>
+            <div id="about" class="col s12">
+                <h1>About</h1>
+                <p>git-blamewars! Blame everyone, blame everything! Click the tabs for some stats, yo!</p>
+            </div>
+        </section>
+
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     </body>
 </html>
