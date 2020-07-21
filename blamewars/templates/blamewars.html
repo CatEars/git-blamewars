@@ -20,6 +20,18 @@
             #display-area > div {
                 display: none;
             }
+
+            @media screen and (max-width: 1000px) {
+                .nav-text {
+                    font-size: 3vw;
+                }
+            }
+            
+            @media screen and (min-width: 1001px) {
+                .nav-text {
+                    font-size: 24px;
+                }
+            }
         </style>
     </head>
     <body>
@@ -27,9 +39,9 @@
             <div class="nav-extended">
                 <div class="nav-content">
                     <ul id="tabs tabs-transparent">
-                        <li class="tab"><a style="font-size:3vw;" href="#about">About</a></li>
-                        <li class="tab"><a style="font-size:3vw;" href="#killers">Top Killers</a></li>
-                        <li class="tab"><a style="font-size:3vw;" href="#losers">Top Losers</a></li>
+                        <li class="tab"><a class="nav-text" href="#about">About</a></li>
+                        <li class="tab"><a class="nav-text" href="#killers">Top Killers</a></li>
+                        <li class="tab"><a class="nav-text" href="#losers">Top Losers</a></li>
                     </ul>
                 </div>
             </div>
