@@ -49,19 +49,45 @@
         <section id="display-area" class="container">
             <div id="killers" class="col s12">
                 <h1>Top Killers</h1>
-                <ul>
-                {% for author, kill_count in killers %}
-                    <li>{{ author }} has removed {{ kill_count }} lines</li>
-                {% endfor %}
-                </ul>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Place</th>
+                            <th>Name</th>
+                            <th>Lines Removed</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for author, kill_count in killers %}
+                        <tr>
+                            <td>{{ loop.index }}</td>
+                            <td>{{ author }}</td>
+                            <td>{{ kill_count }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
             </div>
             <div id="losers" class="col s12">
                 <h1>Top Losers</h1>
-                <ul>
-                {% for author, lose_count in victims %}
-                    <li>{{ author }} has lost {{ lose_count }} lines</li>
-                {% endfor %}
-                </ul>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Place</th>
+                            <th>Name</th>
+                            <th>Lines Lost</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for author, lose_count in victims %}
+                        <tr>
+                            <td>{{ loop.index }}</td>
+                            <td>{{ author }}</td>
+                            <td>{{ lose_count }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
             </div>
             <div id="about" class="col s12">
                 <h1>About</h1>
