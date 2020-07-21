@@ -1,4 +1,4 @@
-from gitstats import GitStats
+from .gitstats import GitStats
 import jinja2
 
 _env = jinja2.Environment(

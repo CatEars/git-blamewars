@@ -23,6 +23,7 @@ class GitStats:
         victims = sorted(victims, reverse=True)[:N]
         return [(author, casualty_count) for casualty_count, author in victims]
 
+
 def blame_stats_from_repo(root_path: str) -> GitStats:
     stats = GitStats()
     repo = git.Repo(root_path)

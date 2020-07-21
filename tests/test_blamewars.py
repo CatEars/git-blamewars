@@ -2,6 +2,7 @@ import blamewars
 import webbrowser
 import os
 
+
 def test_open_in_browser(monkeypatch):
     my_url = None
     def do_open(url):
