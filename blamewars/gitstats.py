@@ -42,11 +42,11 @@ def blame_stats_from_repo(root_path: str) -> GitStats:
                     line_count += 1
                     while line_count not in blamer[blame_index].linenos:
                         blame_index += 1
-                    stats.lines_killed_by(commit.author, 1, blamer[blame_index].commit.author)        
+                    stats.lines_killed_by(commit.author, 1, blamer[blame_index].commit.author)
 
                 elif line[:2] == '  ':
                     line_count += 1
-    return stats            
+    return stats
 
 
 if __name__ == '__main__':
